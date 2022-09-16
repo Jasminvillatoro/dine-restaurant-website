@@ -1,7 +1,33 @@
 import './App.css';
+import { Container } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import Image from  './dine-restaurant-images/images/homepage/hero-bg-mobile.jpg';
+
+const styles = {
+  paperContainer: {
+      backgroundImage: `url(${Image})`
+  }
+};
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#9e7f66',
+    },
+  },
+});
+
 
 function App() {
-  return <div className="App">Hello</div>;
+  return (    
+    <ThemeProvider theme={theme}> 
+  
+    <Container maxWidth='sm'> 
+    <img src={Image}/>
+    </Container>
+    </ThemeProvider>
+  
+  )
 }
 
 export default App;
